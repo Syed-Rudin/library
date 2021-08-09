@@ -1,7 +1,8 @@
 let bookDisplay = document.querySelector('.display');
-let newBook = document.getElementById('newBook');
 let form = document.querySelector('form');
+let newBookBtn = document.getElementById('newBookBtn');
 let submitBtn = document.getElementById('submitBtn');
+let deleteBtn = document.getElementsByClassName('deleteBtn')
 let myLibrary = [];
 
 function Book(title, author, pages, read, notes) {
@@ -79,4 +80,15 @@ submitBtn.addEventListener('click', function(e) {
     displayBooks();
 
     form.reset();
+})
+
+newBookBtn.addEventListener('click', function() {
+    if ((form.style.visibility === '') || (form.style.visibility === 'hidden')) {
+        form.style.visibility = 'visible';
+        newBookBtn.textContent = 'Remove form';
+    } else {
+        console
+        form.style.visibility = 'hidden';
+        newBookBtn.textContent = 'Add new book';
+    }
 })
