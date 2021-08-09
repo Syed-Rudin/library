@@ -2,7 +2,6 @@ let bookDisplay = document.querySelector('.display');
 let form = document.querySelector('form');
 let newBookBtn = document.getElementById('newBookBtn');
 let submitBtn = document.getElementById('submitBtn');
-let deleteBtn = document.getElementsByClassName('deleteBtn')
 let myLibrary = [];
 
 function Book(title, author, pages, read, notes) {
@@ -50,6 +49,7 @@ function displayBooks() {
     let lastBook = myLibrary[myLibrary.length - 1];
     let card = document.createElement('div');
     card.classList.add('card');
+    // card.dataset.book = myLibrary.length - 1;
 
     for (let key in lastBook) {
         if(lastBook.hasOwnProperty(key)) {
@@ -57,6 +57,17 @@ function displayBooks() {
                 let title = document.createElement('div');  
                 title.textContent = lastBook[key];
                 title.classList.add('title');
+
+                let deleteBtn = document.createElement('button');
+                deleteBtn.textContent = 'Delete';
+                deleteBtn.classList.add('deleteBtn');
+                // deleteBtn.dataset.book = myLibrary.length - 1;
+
+                deleteBtn.addEventListener('click', function(e) {
+                    myLibrary = myLibrary.filter(book => book['title'] !== lastBook[key]);
+                    card.remove();
+                })
+                title.appendChild(deleteBtn);
 
                 card.appendChild(title);
             } else {
