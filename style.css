@@ -1,7 +1,11 @@
+html {
+    font-size: 14px;
+    font-family: sans-serif;
+}
+
 body {
     margin: 0;
     padding: 5px;
-    font-family: sans-serif;
 }
 
 * {
@@ -16,7 +20,7 @@ main {
 form {
     width: 400px;
     margin: 0 auto;
-    visibility: hidden;
+    visibility: visible;
 }
 
 h2 {
@@ -90,8 +94,22 @@ textarea {
     line-height: 4px;
     width: 80px;
 }
+
+.read {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.readBtn {
+    position: relative;
+    height: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .card > div {
     padding: 5px;
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.1); */
 }
 
 button {

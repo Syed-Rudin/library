@@ -67,8 +67,8 @@ function displayBooks() {
                     myLibrary = myLibrary.filter(book => book['title'] !== lastBook[key]);
                     card.remove();
                 })
+                
                 title.appendChild(deleteBtn);
-
                 card.appendChild(title);
             } else {
                 let feature = document.createElement('div');
